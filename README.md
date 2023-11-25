@@ -15,7 +15,12 @@
 
 <p>How to run the project on your local machine, step-by-step.</p>
 
-<ol>
-    <li>Ensure you have Node and Angular installed on your device</li>
-    <li>Navgiate to the mansion-crawler directory in the command-line, then run "npm install" and "npm update", and "ng serve --open" in order to launch the application</li>
-</ol>
+<p>Firstly, ensure that you have Node and Angular installed on your device.</p>
+
+<p>Then, navigate to the mansion-crawler directory in the command-line, then run:</p>
+
+```bash
+npm install
+# then
+ng serve --open
+```
