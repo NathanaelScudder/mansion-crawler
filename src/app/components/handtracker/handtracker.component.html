@@ -1,0 +1,31 @@
+<!-- Card setup adapted from https://getbootstrap.com/docs/5.2/components/card -->
+<div class="card text-center text-bg-dark">
+    <div class="card-body">
+        <div class="row">
+            <!-- Display the button for enabling/disabling hand interactions -->
+            <div class="col">
+                <button type="button" class="btn btn-primary mb-2" (click)="toggleDetection()">{{activateHandIterationsLabel}}</button>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Display the video for capturing hand interactions (if enabled) -->
+            <div class="col">
+                <video [hidden]="!isUsingHandIterations" id="htvideo" #htvideo name="htvideo" class="videobox" autoplay="autoplay"></video>
+            </div>
+        </div>
+        <div *ngIf="isUsingHandIterations" class="row">
+            <!-- Display the currently detected gesture (if enabled) -->
+            <div class="col">
+                <p>Detected: {{detectedGesture}}</p>
+            </div>
+        </div>
+        <div *ngIf="isUsingHandIterations" class="row">
+            <!-- Display the current progress towards completing the gesture (if enabled) -->
+            <div class="col">
+                <div class="progress">
+                    <div [ngStyle]="{'width': handInteractionProgressString}" class="progress-bar bg-success" role="progressbar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

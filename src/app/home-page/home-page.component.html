@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <!-- Display the hand tracker component -->
+            <app-handtracker 
+                (onPrediction)="prediction($event)" 
+                (onEnable)="setHandInteractions($event)">
+            </app-handtracker>
+        </div>
+    </div>
+    <div class="row mt-1 mb-1">
+        <div class="col">
+            <!-- Display the game's view port component -->
+            <app-game-view-port></app-game-view-port>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- Display the game's button controller component -->
+            <app-button-controller 
+                (onControl)="invokeAction($event)" 
+                [hasStartedGame]="hasStartedGame" 
+                [hasHandInteractionsEnabled]="hasEnabledHandInteractions">
+            </app-button-controller>
+        </div>
+    </div>
+    
+</div>

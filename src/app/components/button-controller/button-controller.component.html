@@ -1,0 +1,106 @@
+<!-- Enclose the buttons within a card (for a clean format) -->
+<div class="card text-center text-bg-dark">
+    <div class="card-body">
+        <!-- Display the Start/Restart button -->
+        <div class="row border-bottom pb-3">
+            <div class="col">
+                <div class="row">
+                    <!-- Display Start or Restart based on whether the game is already started -->
+                    <div *ngIf="!hasStartedGame" class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(6)">Start</button>
+                    </div>
+                    <div *ngIf="hasStartedGame" class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(7)">Restart</button>
+                    </div>
+                    <!-- Display the hand gesture associated with the start/restart button, if hand gestures are enabled -->
+                    <div *ngIf="hasHandInteractionsEnabled">
+                        Alt:
+                        <i class="fa-solid fa-hand ms-1" alt="Open hand gesture"></i>
+                        <i class="fa-solid fa-hand-fist ms-1" alt="Closed hand gesture"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Display the turn left and turn right buttons and their associated hand gestures (if hand gestures are enabled) -->
+        <div class="row border-bottom pb-3 mt-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(0)" [disabled]="!hasStartedGame">Turn Left</button>
+                    </div>
+                    <div *ngIf="hasHandInteractionsEnabled">
+                        Alt:
+                        <i class="fa-solid fa-hand ms-1" alt="Open hand gesture"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(1)" [disabled]="!hasStartedGame">Turn Right</button>
+                    </div>
+                    <div *ngIf="hasHandInteractionsEnabled">
+                        Alt:
+                        <i class="fa-solid fa-hand-fist ms-1" alt="Closed hand gesture"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Display the turn around and move forward buttons and their associated hand gestures (if hand gestures are enabled) -->
+        <div class="row border-bottom pb-3 mt-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(2)" [disabled]="!hasStartedGame">Turn Around</button>
+                    </div>
+                    <div *ngIf="hasHandInteractionsEnabled">
+                        Alt:
+                        <i class="fa-solid fa-hand-fist ms-1 me-1" alt="Open hand gesture"></i>
+                        <i class="fa-solid fa-hand-fist" alt="Open hand gesture"></i>
+                        or
+                        <i class="fa-solid fa-hand ms-1 me-1" alt="Closed hand gesture"></i>
+                        <i class="fa-solid fa-hand" alt="Closed hand gesture"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(3)" [disabled]="!hasStartedGame">Move Forward</button>
+                    </div>
+                    <div *ngIf="hasHandInteractionsEnabled">
+                        Alt:
+                        <i class="fa-solid fa-hand-point-up ms-1" alt="Pointing hand gesture"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Display the search room and pick up item buttons and their associated hand gestures (if hand gestures are enabled) -->
+        <div class="row mt-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(4)" [disabled]="!hasStartedGame">Search Room</button>
+                    </div>
+                    <div *ngIf="hasHandInteractionsEnabled">
+                        Alt:
+                        <i class="fa-solid fa-hand-point-up ms-1 me-1" alt="Pointing hand gesture"></i>
+                        <i class="fa-solid fa-hand" alt="Open hand gesture"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-sm game-nav-button" (click)="invokeAction(5)" [disabled]="!hasStartedGame">Pick Up Item</button>
+                    </div>
+                    <div *ngIf="hasHandInteractionsEnabled">
+                        Alt:
+                        <i class="fa-solid fa-hand-point-up ms-1 me-1" alt="Pointing hand gesture"></i>
+                        <i class="fa-solid fa-hand-fist" alt="Closed hand gesture"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

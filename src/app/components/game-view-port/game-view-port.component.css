@@ -1,0 +1,49 @@
+/* scroll-box CSS adapted from https://www.nosegraze.com/scrolling-text-box/ */
+/* Change the size of the scroll box to be roughly 25% of the screen for the different breakpoints  */
+@media screen and (max-height: 601px) {
+    .scroll-box {
+        height: 150px; 
+        overflow-y: scroll;
+        background-color: gray;
+    }
+}
+
+@media screen and (min-height: 601px) and (max-height:768px) { 
+    .scroll-box {
+        height: 192px;
+        overflow-y: scroll;
+        background-color: gray;
+    }
+ }
+
+ @media screen and (min-height: 768px) and (max-height:864px) { 
+    .scroll-box {
+        height: 216px;
+        overflow-y: scroll;
+        background-color: gray;
+    }
+ }
+
+ @media screen and (min-height: 864px) and (max-height:926px) { 
+    .scroll-box {
+        height: 232px;
+        overflow-y: scroll;
+        background-color: gray;
+    }
+ }
+
+@media screen and (min-height: 926px) and (max-height:1366px) { 
+    .scroll-box {
+        height: 342px;
+        overflow-y: scroll;
+        background-color: gray;
+    }
+ }
+
+@media screen and (min-height: 1366px) { 
+    .scroll-box {
+        height: 400px;
+        overflow-y: scroll;
+        background-color: gray;
+    }
+ }
